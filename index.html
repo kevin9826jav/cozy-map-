@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Cozy Trip Tracker</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+	<div id="app">
+		<div id="ui-card">
+			<h1>Cozy Trip Tracker</h1>
+			<p class="subtitle">Plan cozy adventures and track places you've explored.</p>
+
+			<div class="search-row">
+				<input id="search-input" type="text" placeholder="Search a place…" aria-label="Search a place" autocomplete="off" />
+				<div class="buttons">
+					<button id="add-goal" class="btn btn-goal" title="Add selected place to goals">Add to Goals</button>
+					<button id="add-visited" class="btn btn-visited" title="Add selected place to visited">Add to Visited</button>
+				</div>
+			</div>
+
+			<div class="progress-row">
+				<div class="progress-label">
+					<span id="progress-text">0 / 0 goals visited (0%)</span>
+				</div>
+				<div class="progress-bar" aria-label="Progress">
+					<div id="progress-fill"></div>
+				</div>
+			</div>
+
+			<div class="util-row">
+				<button id="fit-all" class="btn btn-secondary" title="Fit map to show all markers">Show All</button>
+				<button id="reset" class="btn btn-danger" title="Clear all saved data">Reset</button>
+			</div>
+		</div>
+
+		<div id="map" role="application" aria-label="Cozy styled map"></div>
+	</div>
+
+	<script src="./app.js"></script>
+	<!-- Replace YOUR_GOOGLE_MAPS_API_KEY below with your actual key -->
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"></script>
+</body>
+</html>
