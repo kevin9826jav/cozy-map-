@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Guide - Cozy Travel Progress</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .setup-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .setup-step {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #3182ce 0%, #2c5aa0 100%);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: 600;
+            margin-right: 15px;
+        }
+        
+        .step-title {
+            display: inline-block;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #2d3748;
+            vertical-align: top;
+            margin-top: 2px;
+        }
+        
+        .step-content {
+            margin-top: 20px;
+            color: #4a5568;
+            line-height: 1.7;
+        }
+        
+        .step-content ol {
+            margin-left: 20px;
+            margin-top: 15px;
+        }
+        
+        .step-content li {
+            margin-bottom: 10px;
+        }
+        
+        .code-block {
+            background: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            color: #2d3748;
+            overflow-x: auto;
+        }
+        
+        .warning {
+            background: #fef5e7;
+            border: 1px solid #fed7aa;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #92400e;
+        }
+        
+        .warning strong {
+            color: #d97706;
+        }
+        
+        .success {
+            background: #f0fff4;
+            border: 1px solid #9ae6b4;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            color: #22543d;
+        }
+        
+        .success strong {
+            color: #38a169;
+        }
+        
+        .setup-links {
+            display: flex;
+            gap: 15px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .setup-link {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .setup-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        
+        .setup-link.secondary {
+            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+        }
+        
+        .api-key-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+        }
+        
+        .api-key-input:focus {
+            outline: none;
+            border-color: #90cdf4;
+            box-shadow: 0 0 0 3px rgba(144, 205, 244, 0.1);
+        }
+        
+        .test-btn {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+        
+        .test-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="setup-container">
+        <header class="header">
+            <h1>🔧 Setup Guide</h1>
+            <p class="subtitle">Get your Cozy Travel Progress app up and running</p>
+        </header>
+
+        <div class="setup-links">
+            <a href="demo.html" class="setup-link secondary">← Back to Demo</a>
+            <a href="index.html" class="setup-link">View Full App</a>
+        </div>
+
+        <div class="setup-step">
+            <div>
+                <span class="step-number">1</span>
+                <span class="step-title">Create Google Cloud Project</span>
+            </div>
+            <div class="step-content">
+                <ol>
+                    <li>Go to <a href="https://console.cloud.google.com/" target="_blank">Google Cloud Console</a></li>
+                    <li>Click "Select a project" at the top</li>
+                    <li>Click "New Project"</li>
+                    <li>Enter a project name (e.g., "Travel Progress App")</li>
+                    <li>Click "Create"</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <div>
+                <span class="step-number">2</span>
+                <span class="step-title">Enable Required APIs</span>
+            </div>
+            <div class="step-content">
+                <ol>
+                    <li>In your project, go to "APIs & Services" → "Library"</li>
+                    <li>Search for and enable these APIs:
+                        <ul>
+                            <li><strong>Maps JavaScript API</strong></li>
+                            <li><strong>Places API</strong></li>
+                        </ul>
+                    </li>
+                    <li>Click "Enable" for each API</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <div>
+                <span class="step-number">3</span>
+                <span class="step-title">Create API Key</span>
+            </div>
+            <div class="step-content">
+                <ol>
+                    <li>Go to "APIs & Services" → "Credentials"</li>
+                    <li>Click "Create Credentials" → "API Key"</li>
+                    <li>Copy the generated API key</li>
+                    <li><strong>Important:</strong> Click on the API key to configure restrictions</li>
+                </ol>
+                
+                <div class="warning">
+                    <strong>⚠️ Security Note:</strong> Always restrict your API key to specific domains or IP addresses to prevent unauthorized usage.
+                </div>
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <div>
+                <span class="step-number">4</span>
+                <span class="step-title">Restrict API Key (Recommended)</span>
+            </div>
+            <div class="step-content">
+                <ol>
+                    <li>Click on your API key in the credentials list</li>
+                    <li>Under "Application restrictions", select "HTTP referrers"</li>
+                    <li>Add your domain (e.g., <code>localhost/*</code> for testing)</li>
+                    <li>Under "API restrictions", select "Restrict key"</li>
+                    <li>Select only the APIs you enabled (Maps JavaScript API, Places API)</li>
+                    <li>Click "Save"</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <div>
+                <span class="step-number">5</span>
+                <span class="step-title">Update Your App</span>
+            </div>
+            <div class="step-content">
+                <p>Replace <code>YOUR_API_KEY</code> in your <code>index.html</code> file with your actual API key:</p>
+                
+                <div class="code-block">
+&lt;script src="https://maps.googleapis.com/maps/api/js?key=YOUR_ACTUAL_API_KEY&libraries=places"&gt;&lt;/script&gt;
+                </div>
+                
+                <p>For example:</p>
+                
+                <div class="code-block">
+&lt;script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB...&libraries=places"&gt;&lt;/script&gt;
+                </div>
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <div>
+                <span class="step-number">6</span>
+                <span class="step-title">Test Your Setup</span>
+            </div>
+            <div class="step-content">
+                <p>Enter your API key below to test if it's working:</p>
+                
+                <input type="text" id="api-key-test" class="api-key-input" placeholder="Paste your API key here to test...">
+                <button id="test-api-btn" class="test-btn">Test API Key</button>
+                
+                <div id="test-result"></div>
+            </div>
+        </div>
+
+        <div class="setup-step">
+            <div>
+                <span class="step-number">7</span>
+                <span class="step-title">Run Your App</span>
+            </div>
+            <div class="step-content">
+                <p>Once your API key is working:</p>
+                <ol>
+                    <li>Open <code>index.html</code> in your web browser</li>
+                    <li>Or use a local server for better experience:
+                        <div class="code-block">
+# Python 3
+python -m http.server 8000
+
+# Node.js
+npx serve .
+
+# PHP
+php -S localhost:8000
+                        </div>
+                    </li>
+                    <li>Visit <code>http://localhost:8000</code> in your browser</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="success">
+            <strong>🎉 Congratulations!</strong> Your Cozy Travel Progress app should now be working with Google Maps!
+        </div>
+
+        <div class="setup-links">
+            <a href="index.html" class="setup-link">🚀 Launch Your App</a>
+            <a href="README.md" class="setup-link secondary">📖 View Full Documentation</a>
+        </div>
+    </div>
+
+    <script>
+        // Test API key functionality
+        document.getElementById('test-api-btn').addEventListener('click', function() {
+            const apiKey = document.getElementById('api-key-test').value.trim();
+            const resultDiv = document.getElementById('test-result');
+            
+            if (!apiKey) {
+                resultDiv.innerHTML = '<div class="warning">Please enter an API key to test.</div>';
+                return;
+            }
+            
+            // Test the API key by making a simple request
+            const testUrl = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+            
+            resultDiv.innerHTML = '<div class="success">Testing API key...</div>';
+            
+            // Create a test script tag
+            const testScript = document.createElement('script');
+            testScript.src = testUrl;
+            testScript.onload = function() {
+                resultDiv.innerHTML = '<div class="success"><strong>✅ Success!</strong> Your API key is working correctly. You can now use it in your app!</div>';
+                document.body.removeChild(testScript);
+            };
+            testScript.onerror = function() {
+                resultDiv.innerHTML = '<div class="warning"><strong>❌ Error:</strong> There was a problem with your API key. Please check that it\'s correct and has the right permissions.</div>';
+                document.body.removeChild(testScript);
+            };
+            
+            document.body.appendChild(testScript);
+        });
+        
+        // Auto-fill API key if provided in URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const apiKey = urlParams.get('api_key');
+        if (apiKey) {
+            document.getElementById('api-key-test').value = apiKey;
+        }
+    </script>
+</body>
+</html>
