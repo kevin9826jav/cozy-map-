@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cozy Trip Map</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app__header">
+      <h1 class="title">Cozy Trip Map</h1>
+      <p class="subtitle">Plan where you want to go and celebrate where you've been.</p>
+    </header>
+
+    <section class="controls">
+      <div class="search">
+        <input id="place-input" type="text" placeholder="Search a place..." autocomplete="off" aria-label="Search for a place">
+        <div class="actions">
+          <button id="add-goal" class="btn btn--goal" type="button" title="Add to Goals">Add to Goals</button>
+          <button id="add-visited" class="btn btn--visited" type="button" title="Add to Visited">Add to Visited</button>
+        </div>
+      </div>
+      <div id="message" class="message" aria-live="polite"></div>
+
+      <div class="progress">
+        <div class="progress__label"><span id="progress-text">0 / 0 visited</span></div>
+        <div class="progress__bar">
+          <div id="progress-fill" class="progress__fill" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <div class="toolbar">
+        <button id="show-all" class="btn btn--ghost" type="button">Show all markers</button>
+        <button id="reset" class="btn btn--danger" type="button">Reset</button>
+      </div>
+    </section>
+
+    <main class="map-wrap">
+      <div id="map" class="map" role="application" aria-label="Cozy styled map"></div>
+    </main>
+
+    <footer class="footer">
+      <small>Data is stored locally in your browser. Replace your Google Maps API key in the script tag to run.</small>
+    </footer>
+  </div>
+
+  <script src="./app.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap" async defer></script>
+</body>
+</html>
