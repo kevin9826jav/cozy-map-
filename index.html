@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cozy Travel Map</title>
+  <link rel="stylesheet" href="style.css" />
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places&callback=initMap"
+    async
+    defer
+  ></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="controls">
+    <input id="place-input" type="text" placeholder="Search a place..." />
+    <button id="add-goal" title="Add place as a goal">Add to Goals</button>
+    <button id="add-visited" title="Mark place as visited">Add to Visited</button>
+    <button id="reset" title="Clear stored data">Reset</button>
+    <span id="progress-text">Progress: 0%</span>
+    <div class="progress">
+      <div id="progress-bar"></div>
+    </div>
+  </div>
+  <div id="map"></div>
+</body>
+</html>

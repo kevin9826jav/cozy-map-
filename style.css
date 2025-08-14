@@ -1,0 +1,68 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fefcf9;
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #fff5ea;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+#place-input {
+  flex: 1 1 220px;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #ffd08a;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #ffc066;
+}
+
+button:active {
+  background: #ffb74d;
+}
+
+.progress {
+  position: relative;
+  width: 200px;
+  height: 10px;
+  background: #eee;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background: #8bc34a;
+  transition: width 0.4s ease;
+}
+
+#progress-text {
+  font-size: 0.9rem;
+  margin-right: 6px;
+}
+
+#map {
+  height: calc(100% - 64px); /* adjust depending on controls height */
+}
